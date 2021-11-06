@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function () {gi
   tbUsers = $("#tb-users").DataTable({
     columnDefs: [
       {
