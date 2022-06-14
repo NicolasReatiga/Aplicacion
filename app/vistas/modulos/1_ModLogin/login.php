@@ -2,31 +2,23 @@
     session_start();
 
     //se llama el archivo que hace la conexión con la base de datos
-    include_once "conexion.php";
+    include_once "../model/conexion.php";
 
-    //Se invoca el metodo    
-    $objeto = new Conexion();
-    $conexion = $objeto->Conectar();
-
-    //recibir datos enviados por POST desde ajax
-    $username = (isset($_POST['username'])) ? $_POST['username'] : '';
-    $password = (isset($_POST['password'])) ? $_POST['password'] : '';
+    //recibir datos enviados por POST
+    $username = $_POST['username'];
+    $password = $_POST['password']; 
 
     //se encripta la contraseña del usuario
     $pass = md5($password);
 
-    $consulta = "SELECT * FROM users WHERE UserName = '$username' AND password = '$password'";
-    $resultado = $conexion->prepare($consulta);
-    $resultado->execute();
-
-    if($resultado->rowCount() >= 1){
-        $data = $resultado->fetchAll(PDO::FETCH_ASSOC);
-        $_SESSION["s_user"] = $username;
-        
+    $consulta = $bd->query("SELECT * FROM users WHERE UserName= '$username' AND password= '$pass'");
+    $data = $consulta->fetchAll(PDO::FETCH_ASSOC);
+    print_r($data);
+     if(empty($data)){
+        echo '<script language="javascript">alert("Usuario o Contraseña incorrecta");location.href="login.html";</script>';
     }else{
-        $_SESSION["s_user"] = null;
-        $data=null;
-    }
-    print json_encode($data);
-    $Conexion=null;
+        $_SESSION["s_user"] = $username;
+        $_SESSION["s_userid"] = $data;
+        header('location:../2_ModPrincipal/index.php');
+    } 
 ?>
