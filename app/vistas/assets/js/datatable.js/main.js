@@ -1,10 +1,10 @@
-$(document).ready(function () {gi
+$(document).ready(function () {
   tbUsers = $("#tb-users").DataTable({
-    columnDefs: [
+    "columnDefs": [
       {
-        targets: -1,
-        data: null,
-        defaultContent:
+        "targets": -1,
+        "data": null,
+        "defaultContent":
           "<div class='text-center'> <div class='btn-group'><button class='btn btn-success btnEdit'>Editar</button><button class='btn btn-danger btnDelete'>Eliminar</button></div></div>",
       },
     ],
