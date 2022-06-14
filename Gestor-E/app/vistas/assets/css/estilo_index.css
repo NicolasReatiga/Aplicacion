@@ -1,0 +1,63 @@
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/* Clases especiales */
+.borde{
+    border: 1px solid gray;
+}
+.titulo{
+    width:  100%;
+    height: 70px;
+}
+
+/* Contenedor */
+.contenedor{
+    width: 100%;
+}	
+/* Navegador */
+nav{
+    width: 100%;
+    height: 50px;
+    float: left;
+}
+.logo{
+    width: 25%;
+    height: 100%;
+    float: left;
+}
+.navegador{
+    width: 60%;
+    height: 100%;
+    float: left;
+}
+.ingreso{
+    width: 15%;
+    height: 100%;
+    float: left;
+}
+/*Modulos*/
+.regular{
+	width: 100%;
+	height: 80%;
+}
+.col-izq{
+	width: 25%;
+	height: 239px;
+}
+
+/*Path*/
+.path{
+	width: 75%;
+	height: 50px;
+	float: right;
+}
+
+/*Main*/
+.main{
+	width: 75%;
+	height: 100%;
+	float: right;
+}
