@@ -1,4 +1,14 @@
 <?php
+/** 
+*
+* @Control de ingreso al aplicativo. "login.php"
+* @Versión: 5.4.2 
+* @Creado: 11 de abril del 2022   
+* @Modificado: 
+* @autor: Freddie
+*
+*/
+
     session_start();
 
     //se llama el archivo que hace la conexión con la base de datos

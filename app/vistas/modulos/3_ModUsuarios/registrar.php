@@ -28,7 +28,7 @@
     $UserEmail = $_POST["UserEmail"];
     $RolId = $_POST["RolId"];
 
-    $sentencia = $bd->prepare("INSERT INTO users(Identification,Name1,Name2,Name3,Name4,UserName,Password,UserEmail,Roles_RolId) VALUES (?,?,?,?,?,?,?,?,?);");
+    $sentencia = $bd->prepare("INSERT INTO users(Identification, Name1,Name2,Name3,Name4,UserName,Password,UserEmail,Roles_RolId) VALUES (?,?,?,?,?,?,?,?,?);");
     $resultado = $sentencia->execute([$Identification, $Name1, $Name2, $Name3, $Name4, $UserName, $Password, $UserEmail, $RolId]);
 
     if ($resultado === TRUE) {
